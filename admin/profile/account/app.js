@@ -26,7 +26,7 @@ async function loadAdminSettings() {
         return;
     }
 
-    const { data, error } = await supabase.from('admin').select('*').limit(1).single();
+    const { data, error } = await supabase.from('admin').select('*').eq('id', 2).single();
     if (error) return console.error("Error loading settings:", error.message);
 
     if (data) {
@@ -54,7 +54,7 @@ settingsForm?.addEventListener('submit', async (e) => {
     showSpinner();
 
     // First, check if a row exists to decide between update or insert
-    const { data: existing } = await supabase.from('admin').select('id').limit(1);
+    const { data: existing } = await supabase.from('admin').select('id').eq('id', 2);
 
     let result;
     if (existing && existing.length > 0) {
