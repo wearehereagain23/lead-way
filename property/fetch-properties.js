@@ -71,7 +71,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 // Construct the email body with property info included
-                const body = `Hi Pillar Real Estate,\n\nI am interested in the following property:\n- Name: ${item.name}\n- Price: ${item.amount}\n- Location: ${item.location}\n\nMy Message:\n${result.value.uMsg}\n\nMy Email: ${result.value.uEmail}`;
+                const body = `Hi Lead-Way Real Estate,\n\nI am interested in the following property:\n- Name: ${item.name}\n- Price: ${item.amount}\n- Location: ${item.location}\n\nMy Message:\n${result.value.uMsg}\n\nMy Email: ${result.value.uEmail}`;
 
                 const mailto = `mailto:${admin.email}?subject=${encodeURIComponent(result.value.uSub)}&body=${encodeURIComponent(body)}`;
 
